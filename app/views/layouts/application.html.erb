@@ -8,7 +8,19 @@
 </head>
 <body>
 
+<div class=container>
+<% if !current_user %>
+<%= link_to("Log In", new_user_session_path) %>
+<% else %>
+  <%= link_to("Log Out", destroy_user_session_path, method: :delete) %>
+<% end %>
+
+<%= notice_message %>
 <%= yield %>
+
+
+</div>
+<script src=/Scripts/AssetsBS3/ie10-viewport-bug-workaround.js></script>
 
 </body>
 </html>
