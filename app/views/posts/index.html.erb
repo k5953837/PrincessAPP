@@ -1,8 +1,28 @@
+
+<%= simple_form_for @post do |f| %>
+  <div class="post_wrapper">
+    <div class="jumbotron">
+      <div class="container">
+        <h1> New Post </h1>
+        <div class="group">
+          <%= f.input :title %>
+        </div>
+
+        <div class="group">
+          <%= f.input :content %>
+        </div>
+
+        <%= f.button :submit, data: {disable_with: "Submit..."} %>
+      </div>
+    </div>
+  </div>
+<% end %>
+
 <% @posts.each do |post| %>
   <div class="post_wrapper">
     <div class="jumbotron">
       <div class="container">
-        <h2 class="title"><%= link_to post.title %></h2>
+        <h2 class="title"><%= link_to post.title, post %></h2>
         <p class="content"><%= post.content %></p>
         <h2><small> - No matter the ending is perfect or not, you cannot disappear from my world. - </small></h2>
         <p><small>Best Regards, Johnson</small></p>

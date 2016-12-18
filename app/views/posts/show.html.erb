@@ -1,11 +1,21 @@
-<h1 class="title">
-  <%= @post.title %>
-</h1>
+<div class="post_wrapper">
+    <div class="jumbotron">
+      <div class="container">
+        <h1 class="title">
+          <%= @post.title %>
+        </h1>
 
-<p class="date">
-  Submitted <%= time_ago_in_words(@post.created_at) %> Ago
-</p>
+        <p class="date">
+          Submitted <%= time_ago_in_words(@post.created_at) %> Ago
+        </p>
 
-<p class="content">
-  <%= @post.content %>
-</p>
+        <p class="content">
+          <%= @post.content %>
+        </p>
+
+        <p>
+          <%= link_to "Return", posts_path %>
+        </p>
+    </div>
+  </div>
+</div>
