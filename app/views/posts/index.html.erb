@@ -3,7 +3,10 @@
     <div class="jumbotron">
       <div class="container">
         <h2 class="title"><%= link_to post.title %></h2>
-        <p class="date"><%= post.created_at.strftime("%B, %d, %Y") %></p>
+        <p class="content"><%= post.content %></p>
+        <h2><small> - No matter the ending is perfect or not, you cannot disappear from my world. - </small></h2>
+        <p><small>Best Regards, Johnson</small></p>
+        <p class="date"><small><%= post.created_at.strftime("%I:%M %p, %B %d, %Y") %></small></p>
       </div>
     </div>
   </div>
