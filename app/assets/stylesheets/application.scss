@@ -18,6 +18,8 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+@import 'normalize';
+
 #logo {
     width: 40px;
     right: 3em;
@@ -49,4 +51,9 @@
       text-decoration: none;
     }
   }
+}
+
+body {
+    min-height: 2000px;
+    padding-top: 70px;
 }
