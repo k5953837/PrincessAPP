@@ -36,6 +36,11 @@
             <%= post.created_at.strftime("%I:%M %p, %B %d, %Y") %>
           </small>
         </p>
+        <span class="glyphicon glyphicon-edit"></span>
+        <%= link_to 'Edit', edit_post_path(post.id) %> |
+        <span class="glyphicon glyphicon-trash"></span>
+        <%= link_to 'Delete', post_path(post.id), method: :delete, data: {confirm: 'Are you sure?' }
+        %>
       </div>
     </div>
   </div>
