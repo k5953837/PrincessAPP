@@ -11,9 +11,12 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-    @post.save
-
-    redirect_to @post
+    if @post.save
+      redirect_to @post
+    else
+      @posts = Post.all.order('created_at DESC')
+      render 'index'
+    end
   end
 
   def show
