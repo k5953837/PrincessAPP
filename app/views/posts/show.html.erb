@@ -1,4 +1,4 @@
-<div class="post_wrapper">
+<div id="post_content">
     <div class="jumbotron">
       <div class="container">
         <h1 class="title">
@@ -15,9 +15,13 @@
           <%= @post.content %>
         </p>
 
-        <p>
-          <%= link_to "Return", posts_path %>
-        </p>
+        <div id="comments">
+          <h2><%= @post.comments.count %> Comments</h2>
+          <%= render @post.comments %>
+
+          <h3>Add a comment:</h3>
+          <%= render "comments/form" %>
+        </div>
     </div>
   </div>
 </div>

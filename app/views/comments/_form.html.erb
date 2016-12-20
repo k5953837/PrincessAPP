@@ -1,0 +1,11 @@
+<%= simple_form_for([@post, @post.comments.build]) do |f| %>
+  <div class="group">
+    <%= f.input :name %>
+  </div>
+
+  <div class="group">
+    <%= f.input :body %>
+  </div>
+
+  <%= f.button :submit, data: {disable_with: "Submit..."} %>
+<% end %>
