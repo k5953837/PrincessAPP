@@ -15,6 +15,7 @@
       <ul class="nav navbar-nav navbar-right">
         <% if !current_user %> <!-- if user not log in -->
           <li> <%= link_to("Log In", new_user_session_path) %> </li>
+          <li> <%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path %> </li>
         <% else %>             <!-- if user log in  -->
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
