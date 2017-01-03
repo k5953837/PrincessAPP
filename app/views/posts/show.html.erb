@@ -1,16 +1,16 @@
 <div id="post_content">
     <div class="jumbotron">
       <div class="container">
-        <h1 class="title">
-          <%= @post.title %>
-        </h1>
 
         <p class="date">
-          Submitted <%= time_ago_in_words(@post.created_at) %> Ago
-          <% if current_user %> <!-- if user not log in -->
-            | <%= link_to 'Edit', edit_post_path(@post) %>
-            | <%= link_to 'Delete', post_path(@post), method: :delete, data: {confirm: 'Are you sure?' } %>
-          <% end %>
+        <strong>
+          <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+            Submitted <%= time_ago_in_words(@post.created_at) %> Ago
+            <% if current_user %> <!-- if user not log in -->
+              | <%= link_to 'Edit', edit_post_path(@post) %>
+              | <%= link_to 'Delete', post_path(@post), method: :delete, data: {confirm: 'Are you sure?' } %>
+            <% end %>
+          </strong>
         </p>
 
         <p class="content">

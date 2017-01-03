@@ -5,6 +5,13 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
+  <!-- Theme CSS -->
+  <link href="assets/stylesheets/clean-blog.min.css" rel="stylesheet">
+
+  <!-- Custom Fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 </head>
 <body>
 
@@ -27,13 +34,118 @@
    }(document, 'script', 'facebook-jssdk'));
 </script>
 
+<%= notice_message %>
+<%= render "common/navbar" %>
+
+<!-- Page Header -->
+<!-- Set your background image for this header on the line below. -->
+<% if action_name == "home" %>
+  <header class="intro-header" style="background-image: url('/assets/home-bg.jpg')">
+    <div class="container">
+      <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="site-heading">
+                  <h1>Memo Blog</h1>
+                  <hr class="small">
+                  <span class="subheading">Record Your Life</span>
+              </div>
+          </div>
+      </div>
+    </div>
+  </header>
+<% elsif action_name == "about" %>
+  <header class="intro-header" style="background-image: url('/assets/about-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    <h1>About Me</h1>
+                    <hr class="small">
+                    <span class="subheading">Nice to Meet You</span>
+                </div>
+            </div>
+        </div>
+    </div>
+  </header>
+<% elsif action_name == "show" %>
+  <header class="intro-header" style="background-image: url('/assets/contact-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    <h1><%= @post.title %></h1>
+                    <hr class="small">
+                    <span class="subheading">
+                      <p class="date">
+                        Submitted <%= time_ago_in_words(@post.created_at) %> Ago <br>
+                        <%= @post.comments.count %> Comments
+                      </p>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+  </header>
+<% else %>
+  <header class="intro-header" style="background-image: url('/assets/post-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    <h1>Just Write It</h1>
+                    <hr class="small">
+                    <span class="subheading">Anything You Want</span>
+                </div>
+            </div>
+        </div>
+    </div>
+  </header>
+<% end %>
+
 <div class=container>
   <div class="container-fluid">
-    <%= notice_message %>
-    <%= render "common/navbar" %>
     <%= yield %>
   </div>
 </div>
+
+<hr>
+
+ <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    <li>
+                        <a href="https://tw.linkedin.com/in/zhi-zhan-lu-5b7a7482">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.facebook.com/profile.php?id=1411387123">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/k5953837">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+                <p class="copyright text-muted">Copyright &copy; PrincessAPP 2017</p>
+            </div>
+        </div>
+    </div>
+</footer>
 
 </body>
 </html>

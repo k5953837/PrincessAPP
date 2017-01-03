@@ -4,6 +4,7 @@ gem "bootstrap-sass"
 gem "devise"
 gem "simple_form"
 gem "omniauth-facebook"
+gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
