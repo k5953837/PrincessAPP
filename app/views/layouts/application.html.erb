@@ -77,8 +77,8 @@
                     <hr class="small">
                     <span class="subheading">
                       <p class="date">
-                        Submitted <%= time_ago_in_words(@post.created_at) %> Ago <br>
-                        <%= @post.comments.count %> Comments
+                        Published by <br>
+                        <%= @post.user.email %>
                       </p>
                     </span>
                 </div>
